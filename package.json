@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build deck.mdx"
+    "build": "mdx-deck build --no-html deck.mdx"
   },
   "devDependencies": {
     "mdx-deck": "^1.10.2",
