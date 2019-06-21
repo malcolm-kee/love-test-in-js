@@ -1,0 +1,64 @@
+export { book as theme } from 'mdx-deck/themes';
+
+import { Appear, Head } from 'mdx-deck';
+import { Invert } from 'mdx-deck/layouts';
+import CodeSurfer from './components/code-surfer';
+
+<Head>
+  <title>How to Love Writing Test for JavaScript</title>
+</Head>
+
+export default Invert;
+
+# How to Love Writing Test for JavaScript
+
+---
+
+# I hated writing JavaScript tests
+
+---
+
+<ul>
+  <Appear>
+    <li>it is hard to maintain (add code + bug fix)</li>
+    <li>it doesn't catch my bug</li>
+    <li>it is boring</li>
+  </Appear>
+</ul>
+
+---
+
+# If I'm a good developer, my code shouldn't have bug.
+
+But I'm human.
+
+---
+
+# Test it at "Right" Level of Isolation
+
+(Testing triangle goes here)
+
+(Push Up Gif here)
+
+---
+
+<CodeSurfer
+  code={require('!!raw-loader!./snippets/1.js')}
+  showNumbers
+  steps={[
+    { notes: 'A simple test' },
+    { range: [1, 12], notes: 'Code to be tested' },
+    { range: [14, 26], notes: 'The test' }
+  ]}
+/>
+
+---
+
+# Test is code too
+
+- keep it DRY (but don't overdo it)
+- it's all about tradeoff
+
+---
+
+# Thank You

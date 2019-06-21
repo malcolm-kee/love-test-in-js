@@ -1,7 +1,20 @@
 {
+  "name": "love-test-in-js",
+  "description": "Deck for meetup talk: how to love writing test for JavaScript",
+  "version": "0.1.0",
+  "author": {
+    "name": "Malcolm Kee",
+    "email": "malcolm.keeweesiong@gmail.com"
+  },
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  },
   "devDependencies": {
-    "mdx-deck": "^2.4.0",
+    "mdx-deck": "^1.10.2",
     "mdx-deck-code-surfer": "^0.5.5",
-    "raw-loader": "^3.0.0"
-  }
+    "raw-loader": "^2.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {}
 }
