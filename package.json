@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "mdx-deck": "^2.4.0",
+    "mdx-deck-code-surfer": "^0.5.5",
+    "raw-loader": "^3.0.0"
+  }
+}
