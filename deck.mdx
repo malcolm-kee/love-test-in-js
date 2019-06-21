@@ -1,6 +1,6 @@
 export { book as theme } from 'mdx-deck/themes';
 
-import { Appear, Head } from 'mdx-deck';
+import { Appear, Head, Image } from 'mdx-deck';
 import { Invert } from 'mdx-deck/layouts';
 import CodeSurfer from './components/code-surfer';
 
@@ -14,21 +14,37 @@ export default Invert;
 
 ---
 
+<CodeSurfer
+  code={require('!!raw-loader!./snippets/1.js')}
+  showNumbers
+  steps={[
+    { notes: 'How test looks like' },
+    { range: [1, 12], notes: 'Code to be tested' },
+    { range: [14, 26], notes: 'The test' }
+  ]}
+/>
+
+---
+
 # I hated writing JavaScript tests
 
 ---
 
-<ul>
-  <Appear>
-    <li>it is hard to maintain (add code + bug fix)</li>
-    <li>it doesn't catch my bug</li>
-    <li>it is boring</li>
-  </Appear>
-</ul>
+## 1. Hard to maintain (add code + bug fix)
+
+---
+
+## 2. Doesn't catch my bug
+
+---
+
+## 3. Boring
 
 ---
 
 # If I'm a good developer, my code shouldn't have bug.
+
+---
 
 But I'm human.
 
@@ -38,19 +54,9 @@ But I'm human.
 
 (Testing triangle goes here)
 
-(Push Up Gif here)
-
 ---
 
-<CodeSurfer
-  code={require('!!raw-loader!./snippets/1.js')}
-  showNumbers
-  steps={[
-    { notes: 'A simple test' },
-    { range: [1, 12], notes: 'Code to be tested' },
-    { range: [14, 26], notes: 'The test' }
-  ]}
-/>
+<Image src="images/man_push_up.gif" />
 
 ---
 
@@ -61,4 +67,6 @@ But I'm human.
 
 ---
 
-# Thank You
+export default Invert;
+
+# Give It a Try
