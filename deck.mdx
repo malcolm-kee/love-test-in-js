@@ -19,11 +19,10 @@ maybe for other language too? 🤷
 
 <CodeSurfer
   code={require('!!raw-loader!./snippets/1.js')}
-  showNumbers
   steps={[
     { notes: 'How test looks like' },
-    { range: [1, 12], notes: 'Code to be tested' },
-    { range: [14, 26], notes: 'The test' }
+    { range: [1, 14], notes: 'Code to be tested' },
+    { range: [17, 30], notes: 'The test' }
   ]}
 />
 
@@ -45,11 +44,13 @@ maybe for other language too? 🤷
 
 ---
 
-# If I'm a good developer, my code shouldn't have bug.
+## 4. "If I'm a good developer, my code shouldn't have bug."
 
 ---
 
-But I'm human.
+export default Invert;
+
+## Is the value of automated testing a myth?
 
 ---
 
@@ -62,7 +63,7 @@ But I'm human.
 
 ---
 
-# Test it at "Right" Level of Isolation
+# Rule #1: Test it at "Right" Level of Isolation
 
 ---
 
@@ -70,7 +71,36 @@ But I'm human.
 
 ---
 
+<CodeSurfer
+  code={require('!!raw-loader!./snippets/unit-test-2.js')}
+  showNumbers
+  steps={[
+    { notes: 'An example of unit test' },
+    { range: [1, 18], notes: 'Code to be tested' },
+    { range: [20, 58], notes: 'The test' },
+    {
+      range: [21, 40],
+      notes:
+        'Mocking jquery so we only test getPokemonData and nothing else'
+    },
+    {
+      range: [42, 58],
+      notes: 'Making assertion about getPokemonData'
+    }
+  ]}
+/>
+
+---
+
 <Image src="images/testing_pyramid_with_tradeoff.png" />
+
+---
+
+## The higher level the test is, the more likely it will catch the bug that our limited mental power could not expect.
+
+---
+
+## The higher level the test is, the more it resembles how our code is being used, the more confidence we could gain from it.
 
 ---
 
@@ -78,19 +108,22 @@ But I'm human.
 
 ---
 
-# Test is like security. Too much of it will cause the "safest" result: do nothing.
+## Test is like security. Too much of it will cause the "safest" result: do nothing.
+
+## So...
 
 ---
 
-# Test public API
+## Test public API...
 
 ---
 
 <blockquote className="twitter-tweet">
   <p lang="en" dir="ltr">
-    The common wisdom is that unit tests make refactoring harder, but for React,
-    the opposite has been true. I do huge rewrites several times a year, and I’m
-    only able to do so because our test suite provides so much safety.
+    The common wisdom is that unit tests make refactoring harder, but
+    for React, the opposite has been true. I do huge rewrites several
+    times a year, and I’m only able to do so because our test suite
+    provides so much safety.
     <br />
     <br />
     When people say, “only test the public API,” this is why!
@@ -103,14 +136,67 @@ But I'm human.
 
 ---
 
-And private API that you feel less confident.
+## and private API that you feel less confident.
 
 ---
 
-# Test code is code too
+# Rule #2: Test code is code too
 
-- keep it DRY (but don't overdo it)
-- it's all tradeoff
+---
+
+## keep it DRY (but don't overdo it)
+
+---
+
+<CodeSurfer
+  code={require('!!raw-loader!./snippets/repetition-in-test.js')}
+  steps={[
+    { notes: 'An example of test' },
+    { range: [1, 3], notes: 'Import helpers and code to be tested' },
+    { range: [5, 19], notes: 'Test that verify positive scenario' },
+    {
+      range: [21, 35],
+      notes: 'Test that verify validation'
+    }
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  code={require('!!raw-loader!./snippets/dry-in-test.js')}
+  showNumbers
+  steps={[
+    { notes: 'How to make your test DRY' },
+    {
+      range: [5, 22],
+      notes: 'Create a setup method and returns meaningful functions'
+    },
+    { range: [25, 33], notes: 'Use the setup method in your test' },
+    {
+      range: [35, 49],
+      notes: 'Another test'
+    }
+  ]}
+/>
+
+---
+
+## it's all tradeoff
+
+---
+
+# How to Get Started
+
+---
+
+## [`@testing-library`](https://testing-library.com/)
+
+- `@testing-library/angular`
+- `@testing-library/cypress`
+- `@testing-library/react`
+- `@testing-library/svelte`
+- `@testing-library/vue`
 
 ---
 

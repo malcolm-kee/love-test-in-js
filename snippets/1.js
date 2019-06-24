@@ -1,26 +1,30 @@
+// lib.js
 function readHeader(event, headerName) {
   if (event.headers) {
     return (
-      event.headers[headerName] ||
+      event.headers[headerName] || // returns if exact match
+      // else try to find match case-insensitively
       Object.keys(event.headers)
         .filter(
-          headerKey => headerKey.toLowerCase() === headerName.toLowerCase()
+          headerKey =>
+            headerKey.toLowerCase() === headerName.toLowerCase()
         )
         .map(headerKey => event.headers[headerKey])[0]
     );
   }
 }
 
+// lib.spec.js
+import { readHeader } from './lib';
+
 test('readHeader', () => {
   const event = {
     headers: {
-      'x-foo': 'bar',
-      'x-top-brand': 'df'
+      'x-foo': 'bar'
     }
   };
 
   expect(readHeader(event, 'x-foo')).toBe('bar');
   expect(readHeader(event, 'x-zzz')).toBeUndefined();
-  expect(readHeader(event, 'x-top-brand')).toBe('df');
-  expect(readHeader(event, 'X-Top-Brand')).toBe('df');
+  expect(readHeader(event, 'x-Foo')).toBe('bar');
 });
