@@ -8,9 +8,12 @@
   },
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build --no-html deck.mdx"
+    "build:deck": "mdx-deck build --no-html deck.mdx",
+    "copy:images": "cpx \"images/**/*.{gif,png,jpg}\" dist/images",
+    "build": "yarn build:deck && yarn copy:images"
   },
   "devDependencies": {
+    "cpx": "^1.5.0",
     "mdx-deck": "^1.10.2",
     "mdx-deck-code-surfer": "^0.5.5",
     "raw-loader": "^2.0.0"
