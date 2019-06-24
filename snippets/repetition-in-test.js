@@ -18,7 +18,7 @@ describe('<CustomerForm />', () => {
     expect(fetch).toHaveBeenCallTimes(1);
   });
 
-  it('allows customer to capture all data', () => {
+  it('validate email format when submit', () => {
     // mock fetch
     fetch.mockResponse(() => Promise.resolve({}));
 
