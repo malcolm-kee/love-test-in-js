@@ -2,7 +2,7 @@
 import $ from 'jquery';
 
 export function getPokemonData() {
-  $.ajax('https://pokemon-json.herokuapp.com/api/characters', {
+  $.ajax('https://pokemon-json.herokuapp.com/api/pokemons', {
     method: 'GET',
     onSuccess: pokemons => {
       $.each(pokemons, (_, pokemon) => {

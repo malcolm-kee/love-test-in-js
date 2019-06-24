@@ -1,6 +1,6 @@
 export { book as theme } from 'mdx-deck/themes';
 
-import { Appear, Head, Image } from 'mdx-deck';
+import { Appear, Head, Image, Notes } from 'mdx-deck';
 import { Invert } from 'mdx-deck/layouts';
 import CodeSurfer from './components/code-surfer';
 import Scripts from './components/scripts';
@@ -15,6 +15,15 @@ export default Invert;
 
 maybe for other language too? 🤷
 
+<Notes>
+
+Raise hand
+
+- how many is writing tests in work,
+- how many writing tests for side projects.
+
+</Notes>
+
 ---
 
 <CodeSurfer
@@ -26,31 +35,79 @@ maybe for other language too? 🤷
   ]}
 />
 
+<Notes>
+
+A simple example of test for those that never write tests.
+
+</Notes>
+
 ---
 
 # I hated writing JavaScript tests
+
+<Notes>
+
+Let me share with you how I used to hate writing tests, and why.
+
+</Notes>
 
 ---
 
 ## 1. Hard to maintain (add code + bug fix)
 
+<Notes>
+
+- too much effort to maintain.
+- add new code, tests may fail, need to fix it.
+- Same goes to bug fix, refactor, test fail, need fix.
+- **It is frustrating.**
+
+</Notes>
+
 ---
 
 ## 2. Doesn't catch my bug
+
+<Notes>
+
+- Add on top of the frustration is the tests never catch bugs at all.
+- It is very frequent that all tests pass, bugs still happens.
+
+</Notes>
 
 ---
 
 ## 3. Boring
 
+<Notes>
+
+- And lastly, it's boring to write tests.
+- Not creating, just repeating
+- Maybe that's how writing tests catch bug?
+
+</Notes>
+
 ---
 
 ## 4. "If I'm a good developer, my code shouldn't have bug."
+
+<Notes>
+
+- good code is should be easy to read and understand.
+- good code shouldn't have bug
+- the only bug is due to misunderstanding of requirement, which test can't catch
+
+</Notes>
 
 ---
 
 export default Invert;
 
 ## Is the value of automated testing a myth?
+
+---
+
+# Lesson #1: Test it at "Right" Level of Isolation
 
 ---
 
@@ -61,22 +118,41 @@ export default Invert;
   &mdash; Guillermo ▲ (@rauchg) <a href="https://twitter.com/rauchg/status/807626710350839808?ref_src=twsrc%5Etfw">December 10, 2016</a>
 </blockquote>
 
----
+<Notes>
 
-# Rule #1: Test it at "Right" Level of Isolation
+- Guillermo (creator of socket.io)
+- We're talk about the two tips he give, "mostly integration" and "not too many".
+
+</Notes>
 
 ---
 
 <Image src="images/testing_pyramid.png" />
 
+<Notes>
+
+- Testing pyramid is one of the most popular concepts when talking about automated testing
+- Write most unit tests because they are fast and good feedback loop.
+- Write less integration tests because they are slow and more effort to write and investigate.
+
+</Notes>
+
 ---
 
 <CodeSurfer
   code={require('!!raw-loader!./snippets/unit-test-2.js')}
-  showNumbers
   steps={[
     { notes: 'An example of unit test' },
     { range: [1, 18], notes: 'Code to be tested' },
+    {
+      tokens: {
+        5: [0, 1, 2],
+        8: [0, 1, 2],
+        10: [0, 1, 2, 3, 4, 5, 6],
+        15: [0, 1, 2, 3, 4, 5, 6]
+      },
+      notes: 'These are the places we use jquery'
+    },
     { range: [20, 58], notes: 'The test' },
     {
       range: [21, 40],
@@ -84,19 +160,31 @@ export default Invert;
         'Mocking jquery so we only test getPokemonData and nothing else'
     },
     {
+      tokens: {
+        22: [1, 2],
+        26: [0, 1, 2],
+        35: [0, 1, 2],
+        39: [0, 1, 2, 3]
+      }
+    },
+    {
       range: [42, 58],
       notes: 'Making assertion about getPokemonData'
+    },
+    {
+      notes:
+        'Unit test ≠ low effort, but that is not the biggest issue'
     }
   ]}
 />
 
 ---
 
-<Image src="images/testing_pyramid_with_tradeoff.png" />
+## The higher level the test is, the more likely it will catch the bug that our limited mental power could not predict.
 
 ---
 
-## The higher level the test is, the more likely it will catch the bug that our limited mental power could not expect.
+<Image src="images/man_push_up.gif" />
 
 ---
 
@@ -104,7 +192,7 @@ export default Invert;
 
 ---
 
-<Image src="images/man_push_up.gif" />
+<Image src="images/testing_pyramid_with_tradeoff.png" />
 
 ---
 
@@ -114,7 +202,7 @@ export default Invert;
 
 ---
 
-## Test public API...
+## Test public API (which is usually involves integration of multiple "units" in your code)
 
 ---
 
@@ -140,7 +228,7 @@ export default Invert;
 
 ---
 
-# Rule #2: Test code is code too
+# Lesson #2: Test code is code too
 
 ---
 
@@ -165,7 +253,6 @@ export default Invert;
 
 <CodeSurfer
   code={require('!!raw-loader!./snippets/dry-in-test.js')}
-  showNumbers
   steps={[
     { notes: 'How to make your test DRY' },
     {
