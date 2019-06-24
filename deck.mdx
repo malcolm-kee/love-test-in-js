@@ -3,6 +3,7 @@ export { book as theme } from 'mdx-deck/themes';
 import { Appear, Head, Image } from 'mdx-deck';
 import { Invert } from 'mdx-deck/layouts';
 import CodeSurfer from './components/code-surfer';
+import Scripts from './components/scripts';
 
 <Head>
   <title>How to Love Writing Test for JavaScript</title>
@@ -50,9 +51,49 @@ But I'm human.
 
 ---
 
+<blockquote className="twitter-tweet">
+  <p lang="en" dir="ltr">
+    Write tests. Not too many. Mostly integration.
+  </p>
+  &mdash; Guillermo ▲ (@rauchg) <a href="https://twitter.com/rauchg/status/807626710350839808?ref_src=twsrc%5Etfw">December 10, 2016</a>
+</blockquote>
+
+---
+
+# Test is like security. Too much of it will cause the "safest" result: do nothing.
+
+---
+
+# Test only public API
+
+---
+
+<blockquote className="twitter-tweet">
+  <p lang="en" dir="ltr">
+    The common wisdom is that unit tests make refactoring harder, but for React,
+    the opposite has been true. I do huge rewrites several times a year, and I’m
+    only able to do so because our test suite provides so much safety.
+    <br />
+    <br />
+    When people say, “only test the public API,” this is why!
+  </p>
+  &mdash; Andrew Clark (@acdlite)
+  <a href="https://twitter.com/acdlite/status/1105318434085040128?ref_src=twsrc%5Etfw">
+    March 12, 2019
+  </a>
+</blockquote>
+
+---
+
 # Test it at "Right" Level of Isolation
 
-(Testing triangle goes here)
+---
+
+<Image src="images/testing_pyramid.png" />
+
+---
+
+<Image src="images/testing_pyramid_with_tradeoff.png" />
 
 ---
 
@@ -70,3 +111,5 @@ But I'm human.
 export default Invert;
 
 # Give It a Try
+
+<Scripts scriptSrc="https://platform.twitter.com/widgets.js" />
