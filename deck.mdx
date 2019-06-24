@@ -43,6 +43,18 @@ A simple example of test for those that never write tests.
 
 ---
 
+<Image src="images/testing_pyramid.png" />
+
+<Notes>
+
+- Testing pyramid is one of the most popular concepts when talking about automated testing
+- Write most unit tests because they are fast and good feedback loop.
+- Write less integration tests because they are slow and more effort to write and investigate.
+
+</Notes>
+
+---
+
 # I hated writing JavaScript tests
 
 <Notes>
@@ -101,44 +113,6 @@ Let me share with you how I used to hate writing tests, and why.
 
 ---
 
-export default Invert;
-
-## Is the value of automated testing a myth?
-
----
-
-# Lesson #1: Test it at "Right" Level of Isolation
-
----
-
-<blockquote className="twitter-tweet">
-  <p lang="en" dir="ltr">
-    Write tests. Not too many. Mostly integration.
-  </p>
-  &mdash; Guillermo ▲ (@rauchg) <a href="https://twitter.com/rauchg/status/807626710350839808?ref_src=twsrc%5Etfw">December 10, 2016</a>
-</blockquote>
-
-<Notes>
-
-- Guillermo (creator of socket.io)
-- We're talk about the two tips he give, "mostly integration" and "not too many".
-
-</Notes>
-
----
-
-<Image src="images/testing_pyramid.png" />
-
-<Notes>
-
-- Testing pyramid is one of the most popular concepts when talking about automated testing
-- Write most unit tests because they are fast and good feedback loop.
-- Write less integration tests because they are slow and more effort to write and investigate.
-
-</Notes>
-
----
-
 <CodeSurfer
   code={require('!!raw-loader!./snippets/unit-test-2.js')}
   steps={[
@@ -170,13 +144,35 @@ export default Invert;
     {
       range: [42, 58],
       notes: 'Making assertion about getPokemonData'
-    },
-    {
-      notes:
-        'Unit test ≠ low effort, but that is not the biggest issue'
     }
   ]}
 />
+
+---
+
+export default Invert;
+
+## Is the value of automated testing a myth?
+
+---
+
+# Lesson #1: Test it at "Right" Level of Isolation
+
+---
+
+<blockquote className="twitter-tweet">
+  <p lang="en" dir="ltr">
+    Write tests. Not too many. Mostly integration.
+  </p>
+  &mdash; Guillermo ▲ (@rauchg) <a href="https://twitter.com/rauchg/status/807626710350839808?ref_src=twsrc%5Etfw">December 10, 2016</a>
+</blockquote>
+
+<Notes>
+
+- Guillermo (creator of socket.io)
+- We're talk about the two tips he give, "mostly integration" and "not too many".
+
+</Notes>
 
 ---
 
@@ -184,11 +180,11 @@ export default Invert;
 
 ---
 
-<Image src="images/man_push_up.gif" />
+## The higher level the test is, the more it resembles how our code is being used, the more confidence we could gain from it.
 
 ---
 
-## The higher level the test is, the more it resembles how our code is being used, the more confidence we could gain from it.
+<Image src="images/man_push_up.gif" />
 
 ---
 
