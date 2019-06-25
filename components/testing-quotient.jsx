@@ -21,9 +21,11 @@ const highlightedCellStyles = {
   fontWeight: 'bolder'
 };
 
-const TestingQuotient = ({ deck }) => {
+const TestingQuotient = ({ deck, multiStep }) => {
   React.useEffect(() => {
-    deck.update(updaters.setSteps(deck.index, 1));
+    if (multiStep) {
+      deck.update(updaters.setSteps(deck.index, 1));
+    }
   }, []);
 
   return (
