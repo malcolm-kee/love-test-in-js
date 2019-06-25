@@ -124,33 +124,26 @@ Let me share with you why I used to hate writing tests.
   code={require('!!raw-loader!./snippets/unit-test-2.js')}
   steps={[
     { notes: 'An example of unit test' },
-    { range: [1, 18], notes: 'Code to be tested' },
+    { range: [1, 13], notes: 'Code to be tested' },
     {
       tokens: {
-        5: [0, 1, 2],
         8: [0, 1, 2],
-        10: [0, 1, 2, 3, 4, 5, 6],
-        15: [0, 1, 2, 3, 4, 5, 6]
+        10: [0, 1, 2, 3, 4, 5, 6]
       },
       notes: 'These are the places we use jquery'
     },
-    { range: [20, 58], notes: 'The test' },
+    { range: [15, 40], notes: 'The test' },
     {
-      range: [21, 40],
+      range: [16, 28],
       notes:
         'Mocking jquery so we only test getPokemonData and nothing else'
     },
     {
-      tokens: {
-        22: [1, 2],
-        26: [0, 1, 2],
-        35: [0, 1, 2],
-        39: [0, 1, 2, 3]
-      }
+      range: [30, 44],
+      notes: 'Making assertion about getPokemonData'
     },
     {
-      range: [42, 58],
-      notes: 'Making assertion about getPokemonData'
+      notes: 'This is PITA'
     }
   ]}
 />
@@ -259,12 +252,18 @@ export default Invert;
   steps={[
     { notes: 'How to make your test DRY' },
     {
-      range: [5, 22],
+      range: [5, 30],
       notes: 'Create a setup method and returns meaningful functions'
     },
-    { range: [25, 33], notes: 'Use the setup method in your test' },
     {
-      range: [35, 49],
+      range: [10, 22]
+    },
+    {
+      range: [24, 29]
+    },
+    { range: [33, 41], notes: 'Use the setup method in your test' },
+    {
+      range: [43, 57],
       notes: 'Another test'
     }
   ]}

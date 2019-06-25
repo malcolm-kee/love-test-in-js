@@ -3,21 +3,29 @@ import { render, fireEvent } from '@testing-library/react';
 import { CustomerForm } from './customer-form';
 
 function setupCustomerForm() {
-  // mock fetch
+  // mock ajax calls
   fetch.mockResponse(() => Promise.resolve({}));
   const { getByLabelText, getByText } = render(<CustomerForm />);
 
+  const inputName = name =>
+    fireEvent.change(getByLabelText('Name'), {
+      target: { value: name }
+    });
+
+  const inputEmail = email =>
+    fireEvent.change(getByLabelText('Email'), {
+      target: { value: email }
+    });
+
+  const getInvalidEmailError = () => getByText('Email is invalid');
+
+  const submit = () => fireEvent.click(getByText('Submit'));
+
   return {
-    inputName: name =>
-      fireEvent.change(getByLabelText('Name'), {
-        target: { value: name }
-      }),
-    inputEmail: email =>
-      fireEvent.change(getByLabelText('Email'), {
-        target: { value: email }
-      }),
-    getInvalidEmailError: () => getByText('Email is invalid'),
-    submit: () => fireEvent.click(getByText('Submit'))
+    inputName,
+    inputEmail,
+    getInvalidEmailError,
+    submit
   };
 }
 
