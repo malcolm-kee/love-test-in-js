@@ -1,4 +1,5 @@
 import React from 'react';
+import { withDeck, updaters } from 'mdx-deck';
 
 const labelStyles = {
   textAlign: 'center',
@@ -20,7 +21,11 @@ const highlightedCellStyles = {
   fontWeight: 'bolder'
 };
 
-const TestingQuotient = ({ highlighted }) => {
+const TestingQuotient = ({ deck }) => {
+  React.useEffect(() => {
+    deck.update(updaters.setSteps(deck.index, 1));
+  }, []);
+
   return (
     <table>
       <thead>
@@ -40,7 +45,9 @@ const TestingQuotient = ({ highlighted }) => {
           <td style={labelStyles}>😐No Feeling</td>
           <td style={cellStyles}>C</td>
           <td
-            style={highlighted ? highlightedCellStyles : cellStyles}
+            style={
+              deck.step === 1 ? highlightedCellStyles : cellStyles
+            }
           >
             D
           </td>
@@ -49,7 +56,9 @@ const TestingQuotient = ({ highlighted }) => {
           <td style={labelStyles}>🙅Hate Test</td>
           <td style={cellStyles}>E</td>
           <td
-            style={highlighted ? highlightedCellStyles : cellStyles}
+            style={
+              deck.step === 1 ? highlightedCellStyles : cellStyles
+            }
           >
             F
           </td>
@@ -59,4 +68,4 @@ const TestingQuotient = ({ highlighted }) => {
   );
 };
 
-export default TestingQuotient;
+export default withDeck(TestingQuotient);

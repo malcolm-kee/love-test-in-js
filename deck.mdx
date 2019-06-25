@@ -28,10 +28,6 @@ Raise hand to see the statistics about quotient
 
 ---
 
-<TestingQuotient highlighted />
-
----
-
 <CodeSurfer
   code={require('!!raw-loader!./snippets/1.js')}
   steps={[
@@ -56,7 +52,7 @@ A simple example of test for those that never write tests.
 
 ---
 
-> "To me, _legacy code_ is simply code without tests. <br />... <br /> Code without tests is bad code."
+> To me, _legacy code_ is simply code without tests. <br />... <br /> Code without tests is bad code.
 
 &mdash; Michael C. Feathers (in Working Effectively with Legacy Code)
 
@@ -132,6 +128,7 @@ Let me share with you why I used to hate writing tests.
       },
       notes: 'These are the places we use jquery'
     },
+    { range: [1, 13], notes: 'Code to be tested' },
     { range: [15, 40], notes: 'The test' },
     {
       range: [16, 28],
@@ -143,7 +140,7 @@ Let me share with you why I used to hate writing tests.
       notes: 'Making assertion about getPokemonData'
     },
     {
-      notes: 'This is PITA'
+      notes: 'Test longer than code. This is PITA'
     }
   ]}
 />
