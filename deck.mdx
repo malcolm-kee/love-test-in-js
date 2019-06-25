@@ -4,6 +4,7 @@ import { Appear, Head, Image, Notes } from 'mdx-deck';
 import { Invert } from 'mdx-deck/layouts';
 import CodeSurfer from './components/code-surfer';
 import Scripts from './components/scripts';
+import TestingQuotient from './components/testing-quotient';
 
 <Head>
   <title>How to Love Writing JavaScript Tests</title>
@@ -15,14 +16,19 @@ export default Invert;
 
 maybe for other language too? 🤷
 
+---
+
+<TestingQuotient />
+
 <Notes>
 
-Raise hand
-
-- how many is writing tests in work,
-- how many writing tests for side projects.
+Raise hand to see the statistics about quotient
 
 </Notes>
+
+---
+
+<TestingQuotient highlighted />
 
 ---
 
@@ -55,24 +61,24 @@ A simple example of test for those that never write tests.
 
 ---
 
-# I hated writing JavaScript tests
+# Why I hated writing JavaScript tests
 
 <Notes>
 
-Let me share with you how I used to hate writing tests, and why.
+Let me share with you why I used to hate writing tests.
 
 </Notes>
 
 ---
 
-## 1. Hard to maintain (add code + bug fix)
+## 1. Efforts and tedious (add code + bug fix)
 
 <Notes>
 
 - too much effort to maintain.
 - add new code, tests may fail, need to fix it.
 - Same goes to bug fix, refactor, test fail, need fix.
-- **It is frustrating.**
+- **It is frustrating and boring.**
 
 </Notes>
 
@@ -89,19 +95,7 @@ Let me share with you how I used to hate writing tests, and why.
 
 ---
 
-## 3. Boring
-
-<Notes>
-
-- And lastly, it's boring to write tests.
-- Not creating, just repeating
-- Maybe that's how writing tests catch bug?
-
-</Notes>
-
----
-
-## 4. "If I'm a good developer, my code shouldn't have bug."
+## 3. "If I'm a good developer, my code shouldn't have bug."
 
 <Notes>
 
