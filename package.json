@@ -10,7 +10,8 @@
     "start": "mdx-deck deck.mdx",
     "build:deck": "mdx-deck build --no-html deck.mdx",
     "copy:images": "cpx \"images/**/*.{gif,png,jpg}\" dist/images",
-    "build": "yarn build:deck && yarn copy:images"
+    "build": "yarn build:deck && yarn copy:images",
+    "export": "mdx-deck pdf deck.mdx"
   },
   "devDependencies": {
     "cpx": "^1.5.0",
